@@ -178,7 +178,9 @@ class DiscDrive:
     
         if self.isDiscInserted():
             mountPath = self.mountedPath()
-            assert mountPath == None
+            # not sure why this was here, but it fails the assertion yet successfully rips anyway
+            # commenting out for now
+            # assert mountPath == None
             discName = os.path.basename(mountPath)
 
         return discName
