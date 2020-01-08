@@ -128,10 +128,11 @@ class EmailSMTP:
     def _sendMessage(self,message):
         logging.info('Sending email to \'' + str(self.destination_email) + '\'')
         logging.info('Sending email: ' + message)
-        self.smtp = smtplib.SMTP_SSL(self.server,self.port)
-        self.smtp.login(self.username,self.password)
-        self.smtp.sendmail(self.source_email,self.destination_email,message)
-        self.smtp.quit()
+        # failing with ssh issue for my email, commenting out until I can figure out why
+        # self.smtp = smtplib.SMTP_SSL(self.server,self.port)
+        # self.smtp.login(self.username,self.password)
+        # self.smtp.sendmail(self.source_email,self.destination_email,message)
+        # self.smtp.quit()
 
 
 def test(email_source,email_password,email_server):
